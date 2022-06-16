@@ -1,0 +1,23 @@
+---
+- name: "Remove File"
+  hosts:
+    - RS
+  become: yes
+
+  tasks:
+    - name: Removing a File
+      file:
+        path: "/home/folder1/testfile1.txt"
+        state: absent
+      become: yes
+    - name: RemoveFolder
+      file:
+        path: "/home/folder1"
+        state: absent
+
+  vars:
+    folder_name: 'folder1'
+    file_name: 'file1'
+    greeting: Hello World!
+    instance_http_ports:
+      - 22

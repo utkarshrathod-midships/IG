@@ -1,0 +1,13 @@
+---
+- name: "Fetch File"
+  hosts:
+    - RS
+  become: yes
+  tasks:
+    - name: Deploy Replication Server
+      ansible.builtin.script:
+        cmd: ../scripts/setuprs.sh
+        register: results
+    - name: debugmessage
+      debug:
+       msg: results.stdout
