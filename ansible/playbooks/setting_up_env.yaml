@@ -1,12 +1,12 @@
 ---
-- name: "Fetch File"
+- name: "Setting up Environment"
   hosts:
-    - RS
+    - IG
   become: yes
   tasks:
-    - name: Deploy Replication Server
+    - name: Deploy IG Server
       ansible.builtin.script:
-        cmd: ../scripts/setuprs.sh
+        cmd: ../scripts/setting_up_env.sh
         register: results
     - name: debugmessage
       debug:

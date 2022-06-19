@@ -1,0 +1,14 @@
+---
+- name: "Configure IG Server"
+  hosts:
+    - IG
+  become: yes
+  tasks:
+    - name: Configure IG Server
+      ansible.builtin.script:
+        cmd: ../scripts/configure.sh
+        register: results
+      become: yes
+  vars:
+    instance_http_ports:
+      - 22
