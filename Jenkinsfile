@@ -140,7 +140,6 @@ pipeline {
                 """
             }
         }
-    }   
 }
 
 pipeline {
