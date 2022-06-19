@@ -96,8 +96,7 @@ pipeline {
                 """
             }
         }
-    }   
-}
+    }  
 
 pipeline {
     agent any
