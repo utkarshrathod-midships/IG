@@ -24,10 +24,10 @@ public class Environment {
         Environment() {    
   
         // creating a frame  
-        Frame f = new Frame();    
+        frame f = new frame();    
   
         // creating a choice component  
-        Choice c = new Choice();   
+        choice c = new choice();   
   
         // setting the bounds of choice menu   
         c.setBounds(100, 100, 75, 75);    
