@@ -94,13 +94,7 @@ pipeline {
                 """
             }
         }
-<<<<<<< HEAD
-    }   
-=======
-    }  
-
->>>>>>> c79b2c8f869f9a0d2077e7ad42d5a41967af58f6
-pipeline {
+    } pipeline {
     agent any
     
     parameters {
