@@ -66,7 +66,7 @@ pipeline {
             choices: 'AM, IG, IDM, DS',
             description: 'Component to deploy to')      
         booleanParam(
-            name: 'clear_env',
+            name: 'deploy_env',
             defaultValue: false, 
             description: 'Setting up Environment')
         string(
