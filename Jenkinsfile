@@ -17,17 +17,17 @@ def installAnsible(){
 }
 
 // importing awt class  
-import java.*;   
+import java.awt.*;   
 public class Environment {    
   
          // class constructor  
         Environment() {    
   
         // creating a frame  
-        frame f = new frame();    
+        Frame f = new Frame();    
   
         // creating a choice component  
-        choice c = new choice();   
+        Choice c = new Choice();   
   
         // setting the bounds of choice menu   
         c.setBounds(100, 100, 75, 75);    
@@ -48,23 +48,22 @@ public class Environment {
      }    
   
 // main method  
-public static void main(String[] args)
+    public static void main(String [] args)
 {    
    new Environment();    
 }    
 }   
-
 pipeline {
     agent any
     
     parameters {
         choice(
             name: 'env_type',
-            choices: '(uat,pit,prod)',
+            choices: 'uat,pit,prod',
             description: 'Environment to deploy to')
           choice(
             name: 'Component_type',
-            choices: '(AM, IG, IDM, DS)',
+            choices: 'AM, IG, IDM, DS',
             description: 'Component to deploy to')      
         booleanParam(
             name: 'clear_env',
@@ -79,6 +78,8 @@ pipeline {
     environment {
         EXAMPLE = "EXAMPLE"
     }
+ 
+ stages{
         stage('Setting up Environment') {
             when {
                 expression { params.deploy_env == true }
@@ -94,7 +95,10 @@ pipeline {
                 """
             }
         }
-    } pipeline {
+ }       
+        }
+    
+pipeline {
     agent any
     
     parameters {
@@ -136,6 +140,7 @@ pipeline {
                 """
             }
         }
+        
 pipeline {
     agent any
     
@@ -178,7 +183,3 @@ pipeline {
                 """
             }
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> c79b2c8f869f9a0d2077e7ad42d5a41967af58f6
