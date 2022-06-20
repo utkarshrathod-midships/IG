@@ -48,23 +48,22 @@ public class Environment {
      }    
   
 // main method  
-public static void main(String[] args)
+    public static void main(String [] args)
 {    
    new Environment();    
 }    
 }   
-
 pipeline {
     agent any
     
     parameters {
         choice(
             name: 'env_type',
-            choices: '(uat,pit,prod)',
+            choices: 'uat,pit,prod',
             description: 'Environment to deploy to')
           choice(
             name: 'Component_type',
-            choices: '(AM, IG, IDM, DS)',
+            choices: 'AM, IG, IDM, DS',
             description: 'Component to deploy to')      
         booleanParam(
             name: 'clear_env',
@@ -79,6 +78,8 @@ pipeline {
     environment {
         EXAMPLE = "EXAMPLE"
     }
+
+
         stage('Setting up Environment') {
             when {
                 expression { params.deploy_env == true }
@@ -94,7 +95,9 @@ pipeline {
                 """
             }
         }
-    } pipeline {
+    }
+    
+pipeline {
     agent any
     
     parameters {
@@ -136,6 +139,7 @@ pipeline {
                 """
             }
         }
+        
 pipeline {
     agent any
     
