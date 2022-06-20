@@ -22,10 +22,7 @@ public class Environment {
   
          // class constructor  
         Environment() {    
-  
-        // creating a frame  
-        frame f = new frame();    
-  
+
         // creating a choice component  
         choice c = new choice();   
   
@@ -38,13 +35,6 @@ public class Environment {
         c.add("AM");    
         c.add("DS");      
   
-        // adding choice menu to frame  
-        f.add(c);    
-  
-        // setting size, layout and visibility of frame  
-        f.setSize(400, 400);    
-        f.setLayout(null);    
-        f.setVisible(true);    
      }    
   
 // main method  
