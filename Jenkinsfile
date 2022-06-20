@@ -17,7 +17,7 @@ def installAnsible(){
 }
 
 // importing awt class  
-import java.*;   
+import java.awt.*;   
 public class Environment {    
   
          // class constructor  
